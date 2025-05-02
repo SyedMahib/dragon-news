@@ -11,11 +11,11 @@ const Categories = () => {
     const categories = use(categoryPromise);
 
     return (
-        <div>
+        <div className='text-center'>
             <h2 className='font-bold'>All Categories ({categories.length})</h2>
             <div className='grid grid-cols-1 mt-5 gap-3'>
                 {
-                    categories.map(category =><NavLink key={category.id} className={({isActive})=> isActive ? " btn border-0 shadow-none bg-base-100 text-secondary font-bold w-[35%]" : " btn border-0 shadow-none bg-base-100 text-accent hover:text-secondary hover:font-bold w-[35%]"} to={`/category/${category.id}`}>{category.name}</NavLink>)
+                    categories.map(category =><NavLink key={category.id} className={({isActive})=> isActive ? " btn border-0 shadow-none bg-base-100 text-secondary font-bold w-[51%] mx-auto text-xl" : " btn border-0 shadow-none bg-base-100 text-accent font-normal hover:text-secondary hover:font-bold w-[51%] mx-auto text-xl"} to={`/category/${category.id}`}>{category.name}</NavLink>)
                 }
             </div>
         </div>
