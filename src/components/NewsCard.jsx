@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaEye, FaShare, FaStar } from 'react-icons/fa';
 import { FaBookBookmark } from 'react-icons/fa6';
+import { Link } from 'react-router';
 
 const NewsCard = ({ news }) => {
   const {
+    id,
     title,
     author,
     thumbnail_url,
@@ -51,7 +53,7 @@ const NewsCard = ({ news }) => {
         />
         <p className="text-gray-700 text-sm">
           {details.slice(0, 200)}...
-          <span className="text-primary font-semibold cursor-pointer hover:text-secondary"> Read More</span>
+          <Link to={`/news-details/${id}`} className="text-primary font-semibold cursor-pointer hover:text-secondary"> Read More</Link>
         </p>
         <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
           <div className="flex items-center space-x-2">
